@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AlertsComponent } from './alerts.component';
 import { BadgesComponent } from './badges.component';
 import { ModalsComponent } from './modals.component';
+import { AuthGuard } from '../../auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     data: {
       title: 'Notifications'
     },
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

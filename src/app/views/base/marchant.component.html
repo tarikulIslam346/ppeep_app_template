@@ -1,0 +1,23 @@
+<div class="row">
+
+
+
+
+
+  <div class="col-sm-6 col-md-4" *ngFor="let m of marchant">
+    <div class="card">
+      <div class="card-header">
+        {{m.restaurant_name}}
+        <span class="badge badge-pill badge-danger float-right">42</span>
+      </div>
+      <div class="card-body">
+        Address :{{m.street}}<br> 
+        Zipcode : {{m.post_code}}<br>
+        City : {{m.city | uppercase}}<br>
+        State/Division : {{m.state | uppercase}}<br>
+        City : {{m.country_code | uppercase}}<br>
+        Phone : {{m.restaurant_phone}}
+      </div>
+    </div>
+  </div><!--/.col-->
+</div><!--/.row-->

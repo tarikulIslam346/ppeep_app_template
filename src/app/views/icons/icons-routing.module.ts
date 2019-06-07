@@ -5,6 +5,7 @@ import { CoreUIIconsComponent } from './coreui-icons.component';
 import { FlagsComponent } from './flags.component';
 import { FontAwesomeComponent } from './font-awesome.component';
 import { SimpleLineIconsComponent } from './simple-line-icons.component';
+import { AuthGuard } from '../../auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
     data: {
       title: 'Icons'
     },
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',

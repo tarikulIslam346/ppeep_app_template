@@ -12,6 +12,9 @@ import { PaginationsComponent } from './paginations.component';
 import {PopoversComponent} from './popovers.component';
 import {ProgressComponent} from './progress.component';
 import {TooltipsComponent} from './tooltips.component';
+import { MarchantComponent } from './marchant.component';
+import { AuthGuard } from '../../auth/auth.guard';
+
 
 const routes: Routes = [
   {
@@ -19,10 +22,18 @@ const routes: Routes = [
     data: {
       title: 'Base'
     },
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
         redirectTo: 'cards'
+      },
+      {
+        path: 'marchants',
+        component: MarchantComponent,
+        data: {
+          title: 'Merchants'
+        }
       },
       {
         path: 'cards',
@@ -106,7 +117,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [
+    RouterModule.forChild(routes),
+],
   exports: [RouterModule]
 })
 export class BaseRoutingModule {}
