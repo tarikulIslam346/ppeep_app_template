@@ -9,9 +9,9 @@ import { TabsComponent } from './tabs.component';
 import { CarouselsComponent } from './carousels.component';
 import { CollapsesComponent } from './collapses.component';
 import { PaginationsComponent } from './paginations.component';
-import {PopoversComponent} from './popovers.component';
-import {ProgressComponent} from './progress.component';
-import {TooltipsComponent} from './tooltips.component';
+import { PopoversComponent } from './popovers.component';
+import { ProgressComponent } from './progress.component';
+import { TooltipsComponent } from './tooltips.component';
 import { MarchantComponent } from './marchant.component';
 import { AuthGuard } from '../../auth/auth.guard';
 
@@ -28,13 +28,13 @@ const routes: Routes = [
         path: '',
         redirectTo: 'cards'
       },
-      {
+     /* {
         path: 'marchants',
         component: MarchantComponent,
         data: {
           title: 'Merchants'
         }
-      },
+      },*/
       {
         path: 'cards',
         component: CardsComponent,

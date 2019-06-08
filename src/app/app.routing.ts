@@ -54,6 +54,10 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
+        path: 'merchant',
+        loadChildren: './views/merchant/merchant.module#MerchantModule'
+      },
+      {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
       },

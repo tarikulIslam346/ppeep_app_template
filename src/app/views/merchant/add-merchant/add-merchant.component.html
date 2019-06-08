@@ -1,0 +1,131 @@
+<!-- <form [formGroup]="loginform" (ngSubmit)="login()"> -->
+
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <strong>Restaurant Information</strong> Basic
+          </div>
+          <div class="card-body">
+            <form  class="form-horizontal">
+  
+              
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="restaurant_name">Restaurant name</label>
+                <div class="col-md-9">
+                  <input type="text" id="restaurant_name" name="restaurant_name" class="form-control" placeholder="Enter restaurant name">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="restaurant_slug">Restaurant slug</label>
+                  <div class="col-md-9">
+                    <input type="text" id="restaurant_slug" name="restaurant_slug" class="form-control" placeholder="Enter restaurant slug">
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="restaurant_phone">Restaurant phone</label>
+                  <div class="col-md-9">
+                    <input type="text" id="text-input" name="restaurant_phone" class="form-control" placeholder="Enter restaurant phone">
+                  </div>
+              </div>
+
+
+              <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="contact_name">Contact name</label>
+                  <div class="col-md-9">
+                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="contact name">
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="contact_email">Contact email</label>
+                  <div class="col-md-9">
+                    <input type="text" id="contact_email" name="contact_email" class="form-control" placeholder="Enter contact email">
+                  </div>
+              </div>
+
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="country_code">Country code</label>
+                  <div class="col-md-9">
+                    <select id="country_code" name="country_code" class="form-control">
+                      <option value="0">Please select</option>
+                      <option value="BD">BD</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="street">Street</label>
+                    <div class="col-md-9">
+                      <input type="text" id="contact_email" name="street" class="form-control" placeholder="Enter street">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="city">City</label>
+                    <div class="col-md-9">
+                      <select id="city" name="city" class="form-control">
+                        <option value="0">Please select</option>
+                        <option value="Khulna">Khulna</option>
+                      </select>
+                    </div>
+                  </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="state">State</label>
+                    <div class="col-md-9">
+                        <select id="state" name="state" class="form-control">
+                          <option value="0">Please select</option>
+                          <option value="Khulna">Khulna</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="post_code"> Post code</label>
+                    <div class="col-md-9">
+                      <input type="text" id="post_code" name="post_code" class="form-control" placeholder="Enter post code">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="username"> User name</label>
+                    <div class="col-md-9">
+                      <input type="text" id="username" name="username" class="form-control" placeholder="Enter username">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="password">Password</label>
+                    <div class="col-md-9">
+                      <input type="password" id="password" name="password" class="form-control" placeholder="password">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="latitude"> Latitude </label>
+                    <div class="col-md-9">
+                      <input type="text" id="latitude" name="latitude" class="form-control" placeholder="Enter latitude">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="lontitude"> Lontitude </label>
+                    <div class="col-md-9">
+                      <input type="text" id="lontitude" name="lontitude" class="form-control" placeholder="Enter lontitude">
+                    </div>
+                </div>
+
+            </form>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+            <!-- <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button> -->
+          </div>
+        </div>
+    </div>
+
+
+
+  </div>
+

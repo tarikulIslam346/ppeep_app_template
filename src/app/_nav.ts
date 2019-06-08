@@ -58,6 +58,26 @@ export const navItems: NavData[] = [
     name: 'Components'
   },
   {
+    name: 'Merchant',
+    url: '/merchant',
+    icon: 'icon-cursor',
+    children: [
+      {
+        name: 'Marchant List',
+        url: '/merchant/merchant',
+        icon: 'icon-cursor'
+      },
+      {
+        name: 'Add Marchant ',
+        url: '/merchant/add-merchant',
+        icon: 'icon-cursor'
+      },
+
+    ]
+  },
+
+
+  {
     name: 'Base',
     url: '/base',
     icon: 'icon-puzzle',
