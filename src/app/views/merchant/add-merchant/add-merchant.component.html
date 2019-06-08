@@ -1,36 +1,36 @@
 <!-- <form [formGroup]="loginform" (ngSubmit)="login()"> -->
 
 
-
-
+<!-- <form [formGroup]="merchantform" (ngSubmit)="restaurnatFormSubmit()" class="form-horizontal"> -->
 <div class="row">
+    <!-- <form [formGroup]="merchantform" (ngSubmit)="restaurnatFormSubmit()" class="form-horizontal"> -->
+
     <div class="col-md-6">
         <div class="card">
+            <!-- <form [formGroup]="merchantform" (ngSubmit)="restaurnatFormSubmit()" class="form-horizontal"> -->
           <div class="card-header">
             <strong>Restaurant Information</strong> Basic
           </div>
           <div class="card-body">
-            <form  class="form-horizontal">
-  
-              
+            <form [formGroup]="merchantform" (ngSubmit)="restaurnatFormSubmit()" class="form-horizontal">
               <div class="form-group row">
                 <label class="col-md-3 col-form-label" for="restaurant_name">Restaurant name</label>
                 <div class="col-md-9">
-                  <input type="text" id="restaurant_name" name="restaurant_name" class="form-control" placeholder="Enter restaurant name">
+                  <input type="text" id="restaurant_name" name="restaurant_name" class="form-control" placeholder="Enter restaurant name" formControlName="restaurant_name">
                 </div>
               </div>
 
               <div class="form-group row">
                   <label class="col-md-3 col-form-label" for="restaurant_slug">Restaurant slug</label>
                   <div class="col-md-9">
-                    <input type="text" id="restaurant_slug" name="restaurant_slug" class="form-control" placeholder="Enter restaurant slug">
+                    <input type="text" id="restaurant_slug" name="restaurant_slug" class="form-control" placeholder="Enter restaurant slug" formControlName="restaurant_slug" >
                   </div>
               </div>
 
               <div class="form-group row">
                   <label class="col-md-3 col-form-label" for="restaurant_phone">Restaurant phone</label>
                   <div class="col-md-9">
-                    <input type="text" id="text-input" name="restaurant_phone" class="form-control" placeholder="Enter restaurant phone">
+                    <input type="text" id="text-input" name="restaurant_phone" class="form-control" placeholder="Enter restaurant phone" formControlName="restaurant_phone">
                   </div>
               </div>
 
@@ -38,21 +38,27 @@
               <div class="form-group row">
                   <label class="col-md-3 col-form-label" for="contact_name">Contact name</label>
                   <div class="col-md-9">
-                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="contact name">
+                    <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="contact name" formControlName="contact_name">
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="contact_phone">Contact phone</label>
+                  <div class="col-md-9">
+                    <input type="text" id="contact_phone" name="contact_phone" class="form-control" placeholder="contact name" formControlName="contact_phone">
                   </div>
               </div>
 
               <div class="form-group row">
                   <label class="col-md-3 col-form-label" for="contact_email">Contact email</label>
                   <div class="col-md-9">
-                    <input type="text" id="contact_email" name="contact_email" class="form-control" placeholder="Enter contact email">
+                    <input type="text" id="contact_email" name="contact_email" class="form-control" placeholder="Enter contact email" formControlName="contact_email">
                   </div>
               </div>
 
                 <div class="form-group row">
                   <label class="col-md-3 col-form-label" for="country_code">Country code</label>
                   <div class="col-md-9">
-                    <select id="country_code" name="country_code" class="form-control">
+                    <select id="country_code" name="country_code" class="form-control" formControlName="country_code">
                       <option value="0">Please select</option>
                       <option value="BD">BD</option>
                     </select>
@@ -62,14 +68,14 @@
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="street">Street</label>
                     <div class="col-md-9">
-                      <input type="text" id="contact_email" name="street" class="form-control" placeholder="Enter street">
+                      <input type="text" id="contact_email" name="street" class="form-control" placeholder="Enter street" formControlName="street">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="city">City</label>
                     <div class="col-md-9">
-                      <select id="city" name="city" class="form-control">
+                      <select id="city" name="city" class="form-control" formControlName="city">
                         <option value="0">Please select</option>
                         <option value="Khulna">Khulna</option>
                       </select>
@@ -79,7 +85,7 @@
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="state">State</label>
                     <div class="col-md-9">
-                        <select id="state" name="state" class="form-control">
+                        <select id="state" name="state" class="form-control" formControlName="state">
                           <option value="0">Please select</option>
                           <option value="Khulna">Khulna</option>
                         </select>
@@ -88,44 +94,43 @@
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="post_code"> Post code</label>
                     <div class="col-md-9">
-                      <input type="text" id="post_code" name="post_code" class="form-control" placeholder="Enter post code">
+                      <input type="text" id="post_code" name="post_code" class="form-control" placeholder="Enter post code" formControlName="post_code">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="username"> User name</label>
                     <div class="col-md-9">
-                      <input type="text" id="username" name="username" class="form-control" placeholder="Enter username">
+                      <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" formControlName="username">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="password">Password</label>
                     <div class="col-md-9">
-                      <input type="password" id="password" name="password" class="form-control" placeholder="password">
+                      <input type="password" id="password" name="password" class="form-control" placeholder="password" formControlName="password">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="latitude"> Latitude </label>
                     <div class="col-md-9">
-                      <input type="text" id="latitude" name="latitude" class="form-control" placeholder="Enter latitude">
+                      <input type="text" id="latitude" name="latitude" class="form-control" placeholder="Enter latitude" formControlName="latitude">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="lontitude"> Lontitude </label>
                     <div class="col-md-9">
-                      <input type="text" id="lontitude" name="lontitude" class="form-control" placeholder="Enter lontitude">
+                      <input type="text" id="lontitude" name="lontitude" class="form-control" placeholder="Enter lontitude" formControlName="lontitude">
                     </div>
-                </div>
-
-            </form>
+                </div> 
+                <button type="submit" class="btn btn-sm btn-primary"  [disabled]="!merchantform.valid"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                </form>        
           </div>
           <div class="card-footer">
-            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+            <!-- <button type="submit" class="btn btn-sm btn-primary"  [disabled]="!userForm.valid"><i class="fa fa-dot-circle-o"></i> Submit</button> -->
             <!-- <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button> -->
           </div>
         </div>
+      <!-- </form>   -->
     </div>
-
-
-
   </div>
+  <!-- </form> -->
 

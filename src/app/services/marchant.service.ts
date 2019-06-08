@@ -24,4 +24,9 @@ export class MarchantService {
   getRestaurnats() :Observable<Marchant[]> {
     return this.http.get<Marchant[]>(api + 'restaurnats', this.httpOptions);
   }
+   
+  createRestaurnat(data)  {
+    return this.http.post(api + 'restaurnat/create', data,this.httpOptions);
+  }
+
 }
