@@ -58,6 +58,10 @@ export const routes: Routes = [
         loadChildren: './views/merchant/merchant.module#MerchantModule'
       },
       {
+        path: 'user',
+        loadChildren: './views/user/user.module#UserModule'
+      },
+      {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
       },

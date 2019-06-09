@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MarchantService } from '../../../services/marchant.service';
 import { MatSnackBar } from '@angular/material';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-merchant',
@@ -15,6 +16,7 @@ export class AddMerchantComponent implements OnInit {
     public fb: FormBuilder,
     public marchantService:MarchantService,
     public snackBar: MatSnackBar,
+    public router: Router,
   ) { 
     this.merchantform = this.fb.group({
       restaurant_name: ['', Validators.required],
@@ -66,9 +68,11 @@ export class AddMerchantComponent implements OnInit {
      this.marchantService.createRestaurnat(data).subscribe(data => {
        //this.loader = false;
        console.log(data);
+    
       // this.marchant = data;
        //if(!this.userEdit)this.userType.splice(0,1);
        this.openSnackBar('Success', 'ok');
+       //this.router.navigate['/merchant/merchant'];
      }, error => {
        if(error.status == 400) location.reload(true);
        this.openSnackBar('Error :'+error.error.error+' Status :'+error.statusText, 'ok');

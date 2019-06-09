@@ -25,4 +25,8 @@ export class UserService {
   loginUser(data):Observable<User[]> {
     return this.http.post<User[]>(api+'user/signin', data, this.httpOptions);
   }
+
+  getAllUser():Observable<User[]> {
+    return this.http.get<User[]>(api+'user', this.httpOptions);
+  }
 }

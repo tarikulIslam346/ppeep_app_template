@@ -76,6 +76,25 @@ export const navItems: NavData[] = [
     ]
   },
 
+  {
+    name: 'User',
+    url: '/user',
+    icon: 'icon-cursor',
+    children: [
+      {
+        name: 'User List',
+        url: '/user/user',
+        icon: 'icon-cursor'
+      },
+      /*{
+        name: 'Add Marchant ',
+        url: '/merchant/add-merchant',
+        icon: 'icon-cursor'
+      },*/
+
+    ]
+  },
+
 
   {
     name: 'Base',

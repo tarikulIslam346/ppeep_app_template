@@ -1,34 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { MarchantService } from '../../../services/marchant.service';
-import { Marchant } from '../../../model/marchant';
+import { User } from '../../../model/user';
+import { UserService } from '../../../services/user.service';
 import { MatSnackBar } from '@angular/material';
 
-
 @Component({
-  selector: 'app-merchant-list',
-  templateUrl: './merchant-list.component.html',
-  styleUrls: ['./merchant-list.component.scss']
+  selector: 'app-user-list',
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.scss']
 })
-export class MerchantListComponent implements OnInit {
+export class UserListComponent implements OnInit {
 
-  marchant:Marchant[];
+  user:User[];
 
   constructor(
-    public marchantService:MarchantService,
+    public userService:UserService,
     public snackBar: MatSnackBar,
     
   ) { }
 
   ngOnInit() {
-    this.getRestaurantList();
+    this.getUserList();
   }
 
-  getRestaurantList() {
+  getUserList() {
    // this.loader = true;
-    this.marchantService.getRestaurnats().subscribe(data => {
+    this.userService.getAllUser().subscribe(data => {
       //this.loader = false;
       console.log(data);
-      this.marchant = data;
+      this.user = data;
       //if(!this.userEdit)this.userType.splice(0,1);
     }, error => {
       if(error.status == 400) location.reload(true);

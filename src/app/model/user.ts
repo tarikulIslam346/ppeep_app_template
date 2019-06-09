@@ -3,17 +3,17 @@ export interface User {
     f_name: string;
     l_name: string;
     email: string;
-    dept: string;
-    designation: string;
-    phone: string;
+    client_id: string;
+    rest_id: string;
+    type: string;
     password: string;
     is_active: number;
-    type_id: number;
+    contact: number;
     file: File;
-    course_no:string;
-    pers_no:string;
-    appt:string;
-    user_image: string;
+    gender:string;
+    profile_pic:string;
+    dob:any;
+    status: string;
     updated_at: any;
     created_at: any;
 }
