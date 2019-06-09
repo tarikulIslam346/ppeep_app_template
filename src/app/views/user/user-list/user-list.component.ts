@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../../model/user';
 import { UserService } from '../../../services/user.service';
 import { MatSnackBar } from '@angular/material';
+import { fileUpload } from '../../../commonUrl';
 
 @Component({
   selector: 'app-user-list',
@@ -11,6 +12,7 @@ import { MatSnackBar } from '@angular/material';
 export class UserListComponent implements OnInit {
 
   user:User[];
+  image = fileUpload;
 
   constructor(
     public userService:UserService,

@@ -7,14 +7,18 @@
   <div class="col-sm-6 col-md-4" *ngFor="let u of user">
     <div class="card">
       <div class="card-header">
-        {{u.f_name +' ' + u.l_name| uppercase}}
-        <span class="badge badge-pill badge-danger float-right">0</span>
+        <img *ngIf="u.profile_pic" src="{{image}}images/user_profile/{{u.profile_pic}}" width="50" />
+        {{u.first_name +' ' + u.last_name | uppercase}}
+        <span class="badge badge-pill badge-sucess float-right">
+          <label class="switch switch-3d switch-warning">
+            <input type="checkbox" class="switch-input" [checked]="u.status == '1' ? true : false">
+            <span class="switch-slider"></span>
+          </label>
+        </span>
       </div>
       <div class="card-body">
         Email :{{u.email}}<br> 
-
-        Status : {{u.status | uppercase}}<br>
-        Phone : {{m.contact}}
+        <p *ngIf="u.contact">Phone : {{u.contact}}</p>
       </div>
     </div>
   </div><!--/.col-->

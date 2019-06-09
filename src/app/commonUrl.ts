@@ -1,6 +1,6 @@
 
 export const api = 'http://localhost:8000/api/api/';
-export const fileUpload = 'https://www.intoiit.com/library_api/public/';
+export const fileUpload = 'http://localhost:8000/';
 export const bookUpload = 'https://www.intoiit.com/library/assets/books/';
 export const archiveUpload = 'https://www.intoiit.com/library/assets/archives/';
 export const dummy = 'https://www.intoiit.com/library/assets/';  

@@ -1,7 +1,7 @@
 export interface User {
     id: number;
-    f_name: string;
-    l_name: string;
+    first_name: string;
+    last_name: string;
     email: string;
     client_id: string;
     rest_id: string;
