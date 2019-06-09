@@ -1,6 +1,7 @@
 import { Component, OnDestroy, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { navItems } from '../../_nav';
+import { navItemsFoodXpress } from '../../_nav_foodexpress';
 
 
 @Component({
@@ -22,6 +23,10 @@ export class DefaultLayoutComponent implements OnDestroy {
       attributes: true,
       attributeFilter: ['class']
     });
+  }
+
+  changeNavigation(){
+    this.navItems = navItemsFoodXpress;
   }
 
   ngOnDestroy(): void {
