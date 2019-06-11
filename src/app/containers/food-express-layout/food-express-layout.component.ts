@@ -1,15 +1,15 @@
-import { Component, OnDestroy, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { navItems } from '../../_nav';
+import { Component, Inject, OnDestroy } from '@angular/core';
 import { navItemsFoodXpress } from '../../_nav_foodexpress';
-//import { Router } from '@angular/router';
-
+import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './default-layout.component.html'
+  selector: 'app-food-express-layout',
+  templateUrl: './food-express-layout.component.html',
+  styleUrls: ['./food-express-layout.component.scss']
 })
-export class DefaultLayoutComponent implements OnDestroy {
+export class FoodExpressLayoutComponent implements OnDestroy {
+
+
   public navItems:any;
   public sidebarMinimized = true;
   private changes: MutationObserver;
@@ -19,7 +19,7 @@ export class DefaultLayoutComponent implements OnDestroy {
     @Inject(DOCUMENT) _document?: any,
    // public router: Router,
     ){
-   this.navItems = navItems;
+   this.navItems = navItemsFoodXpress;
     //else this.navItems = navItems;
 
     this.changes = new MutationObserver((mutations) => {
@@ -46,4 +46,5 @@ export class DefaultLayoutComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.changes.disconnect();
   }
+
 }

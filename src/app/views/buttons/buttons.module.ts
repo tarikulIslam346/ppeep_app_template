@@ -27,4 +27,8 @@ import { ButtonsRoutingModule } from './buttons-routing.module';
     BrandButtonsComponent
   ]
 })
-export class ButtonsModule { }
+export class ButtonsModule {
+  static forRoot(): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+    throw new Error("Method not implemented.");
+  }
+}

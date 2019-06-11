@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../../auth/auth.guard';
 import { MerchantListComponent } from './merchant-list/merchant-list.component';
 import { AddMerchantComponent } from './add-merchant/add-merchant.component';
+import { OrderComponent } from './order/order.component';
+import { FoodExpressUserBenifitComponent } from './food-express-user-benifit/food-express-user-benifit.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,20 @@ const routes: Routes = [
         component: AddMerchantComponent,
         data: {
           title: 'Add Merchant '
+        }
+      },
+      {
+        path: 'order',
+        component: OrderComponent,
+        data: {
+          title: 'Order list '
+        }
+      },
+      {
+        path: 'user-benifit',
+        component: FoodExpressUserBenifitComponent,
+        data: {
+          title: 'FNF  Benifit'
         }
       },
 

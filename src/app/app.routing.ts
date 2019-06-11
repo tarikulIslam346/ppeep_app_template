@@ -7,6 +7,7 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { AuthGuard } from './auth/auth.guard';
+import { FoodExpressLayoutComponent } from './containers/food-express-layout/food-express-layout.component';
 
 export const routes: Routes = [
   {
@@ -102,7 +103,7 @@ export const routes: Routes = [
     path: '',
     component: DefaultLayoutComponent,
     data: {
-      title: 'Home'
+      title: 'Foodxpress'
     },
     canActivate: [AuthGuard],
     children: [
@@ -118,7 +119,9 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes,
+    { enableTracing: true } // <-- debugging purposes only
+    ) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

@@ -77,20 +77,25 @@ export const navItems: NavData[] = [
   },*/
 
   {
-    name: 'User',
+    name: 'User & Driver List',
     url: '/user',
-    icon: 'icon-cursor',
+    icon: 'icon-user',
     children: [
       {
         name: 'User List',
         url: '/user/user',
-        icon: 'icon-cursor'
+        icon: 'icon-people'
       },
-      /*{
-        name: 'Add Marchant ',
-        url: '/merchant/add-merchant',
-        icon: 'icon-cursor'
-      },*/
+      {
+        name: 'User Order History ',
+        url: '/user/user-order',
+        icon: 'icon-people'
+      },
+      {
+        name: 'Driver List ',
+        url: '/user/driver',
+        icon: 'icon-people'
+      },
 
     ]
   },
@@ -101,11 +106,11 @@ export const navItems: NavData[] = [
     url: '/base',
     icon: 'icon-puzzle',
     children: [
-      {
+      /*{
         name: 'Merchants',
         url: '/base/marchants',
         icon: 'icon-puzzle'
-      },
+      },*/
       {
         name: 'Cards',
         url: '/base/cards',

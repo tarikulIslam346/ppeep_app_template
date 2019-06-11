@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-//import { Router } from '@angular/router';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 
 @Component({
-  templateUrl: 'dashboard.component.html'
+  selector: 'app-food-express-dashboard',
+  templateUrl: './food-express-dashboard.component.html',
+  styleUrls: ['./food-express-dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class FoodExpressDashboardComponent implements OnInit {
 
+  
   radioModel: string = 'Month';
 
   // lineChart1
@@ -386,4 +388,5 @@ export class DashboardComponent implements OnInit {
       this.mainChartData3.push(65);
     }
   }
+
 }

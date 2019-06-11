@@ -32,8 +32,18 @@ interface NavAttributes {
   export const navItemsFoodXpress: NavData[] = [
 
     {
+      name: 'Foodexpress-dashboard',
+      url: '/foodexpress/dashborad',
+      icon: 'icon-speedometer',
+      badge: {
+        variant: 'info',
+        text: 'NEW'
+      }
+    },
+
+    {
       name: 'Merchant',
-      url: '/merchant',
+      url: 'merchant',
       icon: 'icon-cursor',
       children: [
         {
@@ -44,6 +54,16 @@ interface NavAttributes {
         {
           name: 'Add Marchant ',
           url: '/merchant/add-merchant',
+          icon: 'icon-cursor'
+        },
+        {
+          name: 'Order List ',
+          url: '/merchant/order',
+          icon: 'icon-cursor'
+        },
+        {
+          name: 'FNF Benifit ',
+          url: '/merchant/user-benifit',
           icon: 'icon-cursor'
         },
   
