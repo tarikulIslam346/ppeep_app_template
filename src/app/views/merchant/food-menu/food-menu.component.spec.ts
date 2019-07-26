@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FoodExpressLayoutComponent } from './food-express-layout.component';
+import { FoodMenuComponent } from './food-menu.component';
 
-describe('FoodExpressLayoutComponent', () => {
-  let component: FoodExpressLayoutComponent;
-  let fixture: ComponentFixture<FoodExpressLayoutComponent>;
+describe('FoodMenuComponent', () => {
+  let component: FoodMenuComponent;
+  let fixture: ComponentFixture<FoodMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FoodExpressLayoutComponent ]
+      declarations: [ FoodMenuComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FoodExpressLayoutComponent);
+    fixture = TestBed.createComponent(FoodMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

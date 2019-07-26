@@ -57,7 +57,7 @@ export const navItems: NavData[] = [
     title: true,
     name: 'Components'
   },
-  /*{
+  {
     name: 'Merchant',
     url: '/merchant',
     icon: 'icon-cursor',
@@ -72,9 +72,19 @@ export const navItems: NavData[] = [
         url: '/merchant/add-merchant',
         icon: 'icon-cursor'
       },
+      {
+        name: 'Order list',
+        url: '/merchant/order',
+        icon: 'icon-cursor'
+      },
+      {
+        name: 'FNF  Benifit ',
+        url: '/merchant/user-benifit',
+        icon: 'icon-cursor'
+      },
 
     ]
-  },*/
+  },
 
   {
     name: 'User & Driver List',

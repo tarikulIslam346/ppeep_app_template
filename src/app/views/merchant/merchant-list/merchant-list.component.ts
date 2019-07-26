@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MarchantService } from '../../../services/marchant.service';
 import { Marchant } from '../../../model/marchant';
 import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class MerchantListComponent implements OnInit {
   constructor(
     public marchantService:MarchantService,
     public snackBar: MatSnackBar,
+    public router: Router,
     
   ) { }
 
@@ -41,6 +43,9 @@ export class MerchantListComponent implements OnInit {
     this.snackBar.open(message, action, {
      // duration: 2000,
     });
+  }
+  seeFoodMenu(merchant_id){
+    this.router.navigate(['/merchant/foodmenu/',merchant_id]);
   }
 
 }

@@ -7,7 +7,6 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { AuthGuard } from './auth/auth.guard';
-import { FoodExpressLayoutComponent } from './containers/food-express-layout/food-express-layout.component';
 
 export const routes: Routes = [
   {
@@ -88,32 +87,14 @@ export const routes: Routes = [
       {
         path: 'widgets',
         loadChildren: './views/widgets/widgets.module#WidgetsModule'
+      },
+      {
+        path: 'merchant',
+        loadChildren: './views/merchant/merchant.module#MerchantModule'
       }
     ]
   },
 
-  {
-    path: 'foodexpress',
-    redirectTo: '',
-    pathMatch: 'full',
-    canActivate: [AuthGuard],
-  },
-
-  {
-    path: '',
-    component: DefaultLayoutComponent,
-    data: {
-      title: 'Foodxpress'
-    },
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'merchant',
-        loadChildren: './views/merchant/merchant.module#MerchantModule'
-      },
-   
-    ]
-  },
 
   { path: '**', component: P404Component }
 ];

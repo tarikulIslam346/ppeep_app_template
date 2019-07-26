@@ -1,9 +1,4 @@
 <div class="row">
-
-
-
-
-
   <div class="col-sm-6 col-md-4" *ngFor="let m of marchant">
     <div class="card">
       <div class="card-header">
@@ -17,6 +12,9 @@
         State/Division : {{m.state | uppercase}}<br>
         Country : {{m.country_code | uppercase}}<br>
         Phone : {{m.restaurant_phone}}
+        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+            <button type="button" class="btn btn-block btn-secondary" (click)="seeFoodMenu(m.merchant_id)">See details</button>
+          </div>
       </div>
     </div>
   </div><!--/.col-->

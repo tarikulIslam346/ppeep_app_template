@@ -5,6 +5,7 @@ import { MerchantListComponent } from './merchant-list/merchant-list.component';
 import { AddMerchantComponent } from './add-merchant/add-merchant.component';
 import { OrderComponent } from './order/order.component';
 import { FoodExpressUserBenifitComponent } from './food-express-user-benifit/food-express-user-benifit.component';
+import { FoodMenuComponent } from './food-menu/food-menu.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,13 @@ const routes: Routes = [
         component: MerchantListComponent,
         data: {
           title: 'Merchant List'
+        }
+      },
+      {
+        path: 'foodmenu/:id',
+        component: FoodMenuComponent,
+        data: {
+          title: 'Food Menu List'
         }
       },
       {

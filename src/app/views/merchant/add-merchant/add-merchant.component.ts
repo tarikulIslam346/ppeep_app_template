@@ -72,7 +72,7 @@ export class AddMerchantComponent implements OnInit {
       // this.marchant = data;
        //if(!this.userEdit)this.userType.splice(0,1);
        this.openSnackBar('Success', 'ok');
-       //this.router.navigate['/merchant/merchant'];
+       this.router.navigate['/merchant/merchant'];
      }, error => {
        if(error.status == 400) location.reload(true);
        this.openSnackBar('Error :'+error.error.error+' Status :'+error.statusText, 'ok');
