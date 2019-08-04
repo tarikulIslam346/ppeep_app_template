@@ -20,7 +20,7 @@ export class AuthGuard implements  CanActivate {
       this.isAuthorize = this.checkLogin(url);
       //console.log(localStorage.getItem('isViewUser'))
       //check all state url for permission
- /*      if(this.isAuthorize && 
+      /*if(this.isAuthorize && 
           (  (localStorage.getItem('isViewDashboard') == 'true' && state.url == '')||  
             (localStorage.getItem('isViewQuery') == 'true' && state.url == '/query-show')||  
             (localStorage.getItem('isViewChangePassword') == 'true' && state.url == '/change-password')||  
@@ -64,7 +64,7 @@ export class AuthGuard implements  CanActivate {
           )
         ){
         return true;
-      } */
+        } */
       if(this.isAuthorize) return true;
   }
 

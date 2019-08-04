@@ -6,12 +6,14 @@ import { UserListComponent } from './user-list/user-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { DriverComponent } from './driver/driver.component';
 import { UserOrderHistoryComponent } from './user-order-history/user-order-history.component';
+import {MatProgressSpinnerModule} from '@angular/material';
 
 @NgModule({
   declarations: [UserListComponent, AddUserComponent, DriverComponent, UserOrderHistoryComponent],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    MatProgressSpinnerModule
   ]
 })
 export class UserModule { }

@@ -1,21 +1,63 @@
 <div class="row">
-  <div class="col-sm-6 col-md-4" *ngFor="let m of marchant">
+  <div class="col-sm-12" *ngFor="let m of marchant">
     <div class="card">
       <div class="card-header">
-        {{m.restaurant_name | uppercase}}
-        <span class="badge badge-pill badge-danger float-right">0</span>
+       
+            <b>{{m.restaurant_name | uppercase}} </b>
+       
+       
+
+        
+       
+        <label class="switch switch-label switch-pill switch-outline-primary float-right" height="10">
+            <input type="checkbox" class="switch-input" checked>
+            <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+        </label>   
+        
+        <span class="badge badge-pill badge-success float-right" style="margin: 10px"> 
+          <button type="button" class="btn btn-block btn-pill-link" (click)="addFoodMenu(m.merchant_id)">+ Add Food Item</button>
+        </span>
+        <span class="badge badge-pill badge-success float-right" style="margin: 10px"> 
+            <button type="button" class="btn btn-block btn-pill-link" (click)="addFoodCtegory(m.merchant_id)">+ Add Food Category</button>
+          </span>
+
       </div>
       <div class="card-body">
-        Address :{{m.street}}<br> 
-        Zipcode : {{m.post_code}}<br>
-        City : {{m.city | uppercase}}<br>
-        State/Division : {{m.state | uppercase}}<br>
-        Country : {{m.country_code | uppercase}}<br>
-        Phone : {{m.restaurant_phone}}
-        <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
-            <button type="button" class="btn btn-block btn-secondary" (click)="seeFoodMenu(m.merchant_id)">See details</button>
+          <div class="row align-items-center" >
+              <div class="col-12 col-xl mb-3 mb-xl-0">
+                  <img src="https://www.foodexpress.com.bd/upload/{{m.logo}}" class="img-avatar"  width="300">
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                    <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                        <button type="button" class="btn btn-block btn-pill-link" (click)="EditMerchant(m.merchant_id)" ><i class="cui-note icons font-2xl d-block mt-4"></i></button>
+                    </div>
+                    <span class="badge badge-pill badge-danger float-right" style="margin: 10px"><div *ngIf="m.free_delivery == 1">Free Deliver</div>
+                    </span>&nbsp;&nbsp;
+                    <span class="badge badge-pill badge-danger float-right" style="margin: 10px"><div *ngIf="m.discount != 0">{{m.discount}}% Discount</div>
+                    </span><br>
+                   <b>Address</b> :{{m.street}}<br> 
+                   <b>Zipcode</b> : {{m.post_code}}<br>
+                   <b>City </b>: {{m.city | uppercase}}<br>
+                   <b>State/Division </b>: {{m.state | uppercase}}<br>
+                   <b>Country</b> : {{m.country_code | uppercase}}<br>
+                   <b>Phone</b> : {{m.restaurant_phone}}<br>
+                   <b>IP Adress: </b>{{m.ip_address}}<br><br>
+                   <b>Minimum Delivery Amount: </b><div *ngIf="m.delivery_minimum_order != 0">{{m.delivery_minimum_order}}/=</div>
+                   <div *ngIf="m.delivery_minimum_order == 0">No minimum delivery amount</div>
+                   <br>
+                   <b>Delivery charge : </b>{{m.delivery_charges}} /=<br>
+                   
+                </div>
+          </div>
+          
+   
+        <div class="col-6 col-sm-4">
+            <button type="button" class="btn btn-block btn-outline-primary" (click)="seeFoodMenu(m.merchant_id)">See Food Menu</button>
           </div>
       </div>
     </div>
   </div><!--/.col-->
 </div><!--/.row-->
+
+
+

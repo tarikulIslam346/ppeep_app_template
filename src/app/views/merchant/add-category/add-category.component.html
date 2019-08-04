@@ -1,0 +1,44 @@
+<mat-spinner *ngIf="spinner"></mat-spinner>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>ADD Food Item</strong> 
+          </div>
+          <div class="card-body">
+            <form [formGroup]="merchantFoodCategoryform" (ngSubmit)="restaurnatFoodCategoryFormSubmit()" class="form-horizontal">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="category_name">Food category name</label>
+                    <div class="col-md-9">
+                      <input type="text" id="category_name" name="category_name" class="form-control" placeholder="Enter Food category name" formControlName="category_name" >
+                    </div>
+                </div>
+  
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="category_description">Description</label>
+                    <div class="col-md-9">
+                      <input type="text" id="text-input" name="category_description" class="form-control" placeholder="Enter category description" formControlName="category_description">
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="item_description">Status</label>
+                  <div class="col-md-9">
+                      <label class="switch switch-label switch-pill switch-outline-primary float-right" height="10">
+                          <input type="checkbox" class="switch-input" checked formControlName="status">
+                          <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                      </label>  
+                  </div>
+      
+                </div>
+
+
+ 
+                <button type="submit" class="btn btn-sm btn-primary"  [disabled]="!merchantFoodCategoryform.valid"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                </form>        
+          </div>
+          <div class="card-footer">
+          </div>
+        </div>
+    </div>
+  </div>
+

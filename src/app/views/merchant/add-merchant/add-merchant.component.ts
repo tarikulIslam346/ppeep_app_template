@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MarchantService } from '../../../services/marchant.service';
 import { MatSnackBar } from '@angular/material';
 import {  Router } from '@angular/router';
+import { City } from '../../../model/city';
 
 @Component({
   selector: 'app-add-merchant',
@@ -10,7 +11,9 @@ import {  Router } from '@angular/router';
   styleUrls: ['./add-merchant.component.scss']
 })
 export class AddMerchantComponent implements OnInit {
+
   merchantform: any;
+  city:City[];
 
   constructor(
     public fb: FormBuilder,
@@ -34,11 +37,13 @@ export class AddMerchantComponent implements OnInit {
       password: ['', Validators.required],
       latitude: ['', Validators.required],
       lontitude: ['', Validators.required],
+      opening:['',Validators.required],
+      closing:['',Validators.required],
     });
   }
 
   ngOnInit() {
-  
+    this.getCityList();
   }
 
   restaurnatFormSubmit(){
@@ -59,8 +64,23 @@ export class AddMerchantComponent implements OnInit {
     fd.append('password', this.merchantform.value.password);
     fd.append('latitude', this.merchantform.value.latitude);
     fd.append('lontitude', this.merchantform.value.lontitude);
+    fd.append('opening', this.merchantform.value.opening);
+    fd.append('closing', this.merchantform.value.closing);
     this.createRestaurant(fd);
 
+  }
+
+  getCityList(){
+    this.marchantService.getCties().subscribe(data => {
+      //this.loader = false;
+      console.log(data);
+      this.city = data;
+      //if(!this.userEdit)this.userType.splice(0,1);
+    }, error => {
+      if(error.status == 400) location.reload(true);
+      this.openSnackBar('Error :'+error.error.error+' Status :'+error.statusText, 'ok');
+      console.log(error);
+    });
   }
 
   createRestaurant(data) {

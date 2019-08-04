@@ -13,7 +13,7 @@ export interface User {
     gender:string;
     profile_pic:string;
     dob:any;
-    status: string;
+    status: number;
     updated_at: any;
     created_at: any;
 }

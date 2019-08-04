@@ -36,13 +36,13 @@ export class LoginComponent implements OnInit  {
     fd.append('email', this.loginform.value.email);
     fd.append('password', this.loginform.value.password);
     this.userService.loginUser(fd).subscribe(data => {
-      console.log(data); // get user data
-      //this.permissionArrayProcess(data); // retrive from permission array
-      localStorage.setItem('token', data['token']); // set authoraization token in localStorage
-      //localStorage.setItem('user_type', data['user']['type_id']); // set typeId in localStorage
-      localStorage.setItem('user_id', data['user']['id']);
-      this.userService.isLoggedIn = true; // set loggied in true
-      localStorage.setItem('isLoggedIn','true');
+    console.log(data); // get user data
+    this.permissionArrayProcess(data); // retrive from permission array
+    localStorage.setItem('token', data['token']); // set authoraization token in localStorage
+    //localStorage.setItem('user_type', data['user']['type_id']); // set typeId in localStorage
+    localStorage.setItem('user_id', data['user']['id']);
+    this.userService.isLoggedIn = true; // set loggied in true
+    localStorage.setItem('isLoggedIn','true');
      // this.loader = false;
       //this.openSnackBar('Sir !Successfully logged in.Waiting for data load. ', 'ok');
       //let redirect = ''; // redirect to the dashboard
@@ -64,12 +64,86 @@ export class LoginComponent implements OnInit  {
     });
   }
 
-  ngOnInit() {
-    // this.loader = true;
-  }
+  ngOnInit() {}
+
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
      // duration: 2000,
     });
+  }
+
+  permissionArrayProcess(data) {
+    for (let i = 0; i < data['roles'].length; i++) {
+      /******* all permission****/
+      console.log('Menu id : ' + data['roles'][i].menu_id +
+        '\ncan_read : ' + data['roles'][i].can_read +
+        '\ncan_write :' + data['roles'][i].can_write)
+       /************ Merchant nav menu *******/
+        if (data['roles'][i].menu_id == 1) {
+          if (data['roles'][i].can_write == 1) {
+            this.userService.userPermission.push('/merchant/add-merchant');
+            this.userService.userPermission.push('/merchant/order');
+          }
+          if (data['roles'][i].can_read == 1 ) {
+
+            this.userService.userPermission.push('/merchant/merchant');
+            this.userService.userPermission.push('/merchant/user-benifit');
+            this.userService.userPermission.push('/merchant/foodmenu');
+            
+          }
+  
+        } 
+      /************user nav menu *******/
+     if (data['roles'][i].menu_id == 2) {
+        if (data['roles'][i].can_write == 1) {
+          this.userService.userPermission.push('/user/user-order');
+          this.userService.userPermission.push('/user/driver')
+        }
+  
+        if (data['roles'][i].can_read == 1) {
+          this.userService.userPermission.push('/user/user');
+        }
+      }
+
+
+    }
+
+   for (let i = 0; i < this.userService.userPermission.length; i++) {
+      console.log(this.userService.userPermission[i] + "\n");
+      /***** Merchant Nav menu ***/
+      if (this.userService.userPermission[i] == '/merchant/merchant') {
+        this.userService.isViewMerchantShowPermission = true;
+        localStorage.setItem('isViewMerchantShow', 'true');
+      } 
+      if (this.userService.userPermission[i] == '/merchant/user-benifit') {
+        this.userService.isViewUserBenifitPermission = true;
+        localStorage.setItem('isViewUserBenifit', 'true');
+      } 
+      if (this.userService.userPermission[i] == '/merchant/foodmenu') {
+        this.userService.isViewMerchantFoodMenuPermission = true;
+        localStorage.setItem('isViewMerchantFoodMenu', 'true');
+      }
+      if (this.userService.userPermission[i] == '/merchant/add-merchant') {
+        this.userService.isAddMerchantPermission = true;
+        localStorage.setItem('isAddMerchant', 'true');
+      }
+      if (this.userService.userPermission[i] == '/merchant/order') {
+        this.userService.isViewMerchantOrderPermission = true;
+        localStorage.setItem('isViewMerchantOrder', 'true');
+      }
+      /***** user nav menu***/
+      if (this.userService.userPermission[i] == '/user/user') {
+        this.userService.isViewUserPermission = true;
+        localStorage.setItem('isViewUser', 'true');
+      }
+      if (this.userService.userPermission[i] == '/user/driver') {
+        this.userService.isViewDriverPermission = true;
+        localStorage.setItem('isViewDriver', 'true');
+      }
+      if (this.userService.userPermission[i] == '/user/user-order') {
+        this.userService.isViewUserOrderPermission = true;
+        localStorage.setItem('isViewUserOrder', 'true');
+      }
+    }
   }
 }

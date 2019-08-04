@@ -55,27 +55,27 @@ export const navItems: NavData[] = [
   },
   {
     title: true,
-    name: 'Components'
+    name: 'PPEEP FOOD'
   },
   {
     name: 'Merchant',
     url: '/merchant',
-    icon: 'icon-cursor',
+    icon: 'icon-briefcase',
     children: [
       {
         name: 'Marchant List',
         url: '/merchant/merchant',
-        icon: 'icon-cursor'
+        icon: 'icon-briefcase'
       },
       {
         name: 'Add Marchant ',
         url: '/merchant/add-merchant',
-        icon: 'icon-cursor'
+        icon: 'icon-briefcase'
       },
       {
         name: 'Order list',
         url: '/merchant/order',
-        icon: 'icon-cursor'
+        icon: 'icon-basket-loaded'
       },
       {
         name: 'FNF  Benifit ',
@@ -87,12 +87,12 @@ export const navItems: NavData[] = [
   },
 
   {
-    name: 'User & Driver List',
+    name: 'User',
     url: '/user',
     icon: 'icon-user',
     children: [
       {
-        name: 'User List',
+        name: 'User',
         url: '/user/user',
         icon: 'icon-people'
       },
@@ -102,12 +102,17 @@ export const navItems: NavData[] = [
         icon: 'icon-people'
       },
       {
-        name: 'Driver List ',
+        name: 'Drelivery Man',
         url: '/user/driver',
         icon: 'icon-people'
       },
 
     ]
+  },
+
+  {
+    title: true,
+    name: 'Component'
   },
 
 
@@ -116,11 +121,11 @@ export const navItems: NavData[] = [
     url: '/base',
     icon: 'icon-puzzle',
     children: [
-      /*{
+      {
         name: 'Merchants',
         url: '/base/marchants',
         icon: 'icon-puzzle'
-      },*/
+      },
       {
         name: 'Cards',
         url: '/base/cards',
@@ -315,6 +320,7 @@ export const navItems: NavData[] = [
     },
     attributes: { disabled: true },
   },
+  /*
   {
     name: 'Download CoreUI',
     url: 'http://coreui.io/angular/',
@@ -329,5 +335,5 @@ export const navItems: NavData[] = [
     icon: 'icon-layers',
     variant: 'danger',
     attributes: { target: '_blank', rel: 'noopener' }
-  }
+  }*/
 ];

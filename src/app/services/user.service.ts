@@ -12,6 +12,16 @@ export class UserService {
 
   isLoggedIn :boolean=false;
   redirectUrl:string;
+  userPermission:string[]=[];
+
+  isViewMerchantShowPermission:boolean=false;
+  isViewUserBenifitPermission:boolean=false;
+  isViewMerchantFoodMenuPermission:boolean=false;
+  isAddMerchantPermission:boolean=false;
+  isViewMerchantOrderPermission:boolean=false;
+  isViewUserPermission:boolean=false;
+  isViewDriverPermission:boolean=false;
+  isViewUserOrderPermission:boolean=false;
 
   constructor(private http: HttpClient) { }
 

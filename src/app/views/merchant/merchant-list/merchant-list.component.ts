@@ -47,5 +47,15 @@ export class MerchantListComponent implements OnInit {
   seeFoodMenu(merchant_id){
     this.router.navigate(['/merchant/foodmenu/',merchant_id]);
   }
+  addFoodMenu(merchant_id){
+    this.router.navigate(['/merchant/add-food-menu/',merchant_id]);
+  }
+  addFoodCtegory(merchant_id){
+    this.router.navigate(['/merchant/add-food-category/',merchant_id]);
+  
+  }
+  EditMerchant(merchant_id){
+
+  }
 
 }

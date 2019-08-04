@@ -5,11 +5,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 //import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatSnackBarModule} from '@angular/material';
+
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
+
+
+//Material component
+import {MatSnackBarModule,MatProgressSpinnerModule} from '@angular/material';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
@@ -69,11 +73,12 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatSnackBarModule,
     DragDropModule,
     ScrollingModule,
     CdkTableModule,
-    CdkTreeModule
+    CdkTreeModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
   ],
   declarations: [
     AppComponent,

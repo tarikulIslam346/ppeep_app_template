@@ -1,0 +1,82 @@
+<mat-spinner *ngIf="spinner"></mat-spinner>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>ADD Food Item</strong> 
+          </div>
+          <div class="card-body">
+            <form [formGroup]="merchantFoodItemform" (ngSubmit)="restaurnatFoodMenuFormSubmit()" class="form-horizontal">
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="item_name">Food	Item Name</label>
+                    <div class="col-md-9">
+                      <input type="text" id="item_name" name="item_name" class="form-control" placeholder="Enter Food Item Name" formControlName="item_name" >
+                    </div>
+                </div>
+  
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="item_description">Item Description</label>
+                    <div class="col-md-9">
+                      <input type="text" id="text-input" name="item_description" class="form-control" placeholder="Enter Item description" formControlName="item_description">
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="item_description">Status</label>
+                  <div class="col-md-9">
+                      <label class="switch switch-label switch-pill switch-outline-primary float-right" height="10">
+                          <input type="checkbox" class="switch-input" checked formControlName="status">
+                          <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                      </label>  
+                  </div>
+      
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="category">Category</label>
+                    <div class="col-md-9">
+                        <select id="category" name="category" class="form-control" formControlName="category">
+                          <option value="0">Please select</option>
+                          <option *ngFor="let c of category"  value="{{c.cat_id}}">{{c.category_name}}</option>
+                        </select>
+                      </div>
+                </div>
+
+              <div class="form-group row">
+                
+                  <label class="col-md-3 col-form-label" for="price">Price</label>
+                  <div class="col-md-9">
+                    <input type="text" id="price" name="price" class="form-control" placeholder="Enter price" formControlName="price">
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="discount">discount</label>
+                  <div class="col-md-9">
+                    <input type="text" id="discount" name="discount" class="form-control" placeholder="Enter discount amount" formControlName="discount">
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="contact_email">Addon item</label>
+                  <div class="col-md-9">
+                    <input type="text" id="addon_item" name="addon_item" class="form-control" placeholder="Enter addon item" formControlName="addon_item">
+                  </div>
+              </div>
+
+       
+
+
+                <div class="form-group row">
+                    <label class="col-md-3 col-form-label" for="ingredients"> ingredients</label>
+                    <div class="col-md-9">
+                      <input type="text" id="ingredients" name="ingredients" class="form-control" placeholder="Enter ingredients" formControlName="ingredients">
+                    </div>
+                </div>
+ 
+                <button type="submit" class="btn btn-sm btn-primary"  [disabled]="!merchantFoodItemform.valid"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                </form>        
+          </div>
+          <div class="card-footer">
+          </div>
+        </div>
+    </div>
+  </div>
